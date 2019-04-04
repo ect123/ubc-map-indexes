@@ -35,7 +35,16 @@
 			$.getJSON("https://raw.githubusercontent.com/ect123/ubc-map-indexes/master/japan/10k.geojson",function(data){ L.geoJson(data, {onEachFeature}).addTo(mymap);});
 
 
-function onEachFeature(feature, layer) {if (feature.properties) {layer.bindPopup('<h1>' + feature.properties.mapTitle + '</h1><b>Year:</b> ' + feature.properties.year +  '</br><b>Map Sheet:</b> ' + feature.properties.sheet);}}
+function onEachFeature(feature, layer) {if (feature.properties) {layer.bindPopup(
+'<h1>' + feature.properties.mapTitle + '</h1>' +
+'</br><b>Folder:</b> ' + feature.properties.sheet +
+'</br><b>Sheet Number:</b> ' + feature.properties.sheet +
+'</br><b>Scale:</b> ' + feature.properties.scale +
+'</br><b>Style:</b> ' + feature.properties.Style +
+'</br><b>Map Title (Hiragana):</b> ' + feature.properties.mapTitleHiragana +
+'</br><b>Map Title (Kanji):</b> ' + feature.properties.mapTitleKanji +
+'</br><b>Publisher:</b> ' + feature.properties.Publisher + ' , [' + feature.properties.publisherEng + ']' +
+'</br><b>Year:</b> ' + feature.properties.yearJapanese + ', [' + feature.properties.year + ']');}}
 
 
 
